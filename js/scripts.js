@@ -44,7 +44,7 @@ function Contact(firstName, lastName, phoneNumber,email,physicalAddress, Address
   this.phoneNumber = phoneNumber;
   this.email = email;
   this.physicalAddress = physicalAddress;
-  this.addresses = Addresses();
+  this.addresses = Addresses;
 }
 
 Contact.prototype.fullName = function() {
@@ -73,6 +73,10 @@ function showContact(contactId) {
   $(".phone-number").html(contact.phoneNumber);
   $(".email").html(contact.email);
   $(".physical-address").html(contact.physicalAddress);
+  $(".personalAddress").html(contact.addresses.personalAddress);
+  $(".personalEmail").html(contact.addresses.personalEmail);
+  $(".workAddress").html(contact.addresses.workAddress);
+  $(".workEmail").html(contact.addresses.workEmail);
   let buttons = $("#buttons");
   buttons.empty();
   buttons.append("<button class='deleteButton' id=" + contact.id +
@@ -120,3 +124,4 @@ $(document).ready(function() {
     displayContactDetails(addressBook);
   });
 });
+
